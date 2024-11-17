@@ -14,8 +14,18 @@ const withDeletedAtTimestamp = {
 export const user = sqliteTable('user', {
 	id: text().primaryKey(),
 	username: text().notNull().unique(),
+	passwordHash: text('password_hash').notNull(),
 	...withDefaultTimestamps,
 	...withDeletedAtTimestamp
 });
 
+export const session = sqliteTable('session', {
+	id: text().primaryKey(),
+	userId: text()
+		.notNull()
+		.references(() => user.id),
+	expiresAt: integer({ mode: 'timestamp' }).notNull()
+});
+
 export type User = typeof user.$inferSelect;
+export type Session = typeof session.$inferSelect;
