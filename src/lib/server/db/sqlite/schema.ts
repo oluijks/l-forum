@@ -14,7 +14,7 @@ const withDeletedAtTimestamp = {
 export const user = sqliteTable('user', {
 	id: text().primaryKey(),
 	username: text().notNull().unique(),
-	passwordHash: text('password_hash').notNull(),
+	passwordHash: text().notNull(),
 	...withDefaultTimestamps,
 	...withDeletedAtTimestamp
 });

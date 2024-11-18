@@ -12,5 +12,6 @@ export default defineConfig({
 
 	verbose: true,
 	strict: true,
-	dialect: 'sqlite'
+	dialect: 'sqlite',
+	casing: 'snake_case'
 });
