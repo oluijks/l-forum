@@ -31,6 +31,7 @@ export default ts.config(
 			'build/',
 			'.svelte-kit/',
 			'dist/',
+			'src/lib/components/ui/',
 			'src/lib/server/db/sqlite/migrations/'
 		]
 	}
