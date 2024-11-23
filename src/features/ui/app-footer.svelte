@@ -14,8 +14,7 @@
 		{ title: 'about', href: '/about' },
 		{ title: 'cookies', href: '/legal/cookies' },
 		{ title: 'policy', href: '/legal/policy' },
-		{ title: 'terms', href: '/legal/terms' },
-		{ title: 'help', href: '/help' }
+		{ title: 'terms', href: '/legal/terms' }
 	];
 </script>
 
@@ -38,14 +37,17 @@
 		<p
 			class="flex items-center gap-1 text-sm text-muted-foreground/75 2xl:mr-8"
 		>
-			L-Forum v{version} / Svelte v{svelteVersion} and SvelteKit v{svelteKitVersion}
+			L-Forum v{version}
+		</p>
+		<p class="text-sm text-muted-foreground/75 2xl:mr-8">
+			Svelte v{svelteVersion} and SvelteKit v{svelteKitVersion}
 		</p>
 	</div>
 </footer>
 
 <style lang="postcss">
 	footer {
-		@apply mt-auto border-t border-border/40 bg-background p-4;
+		@apply mt-auto border-t border-border/40 bg-background p-2;
 	}
 	.footer-container {
 		@apply flex flex-col items-center gap-2 p-2;
