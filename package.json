@@ -10,14 +10,21 @@
 		"preview": "vite preview",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+		"prepare": "husky",
 		"format": "prettier --write .",
 		"lint": "prettier --check . && eslint .",
+		"test:unit": "vitest",
+		"test": "pnpm run test:unit --run",
 		"db:sqlite:up": "drizzle-kit up --config=drizzle.config.sqlite.ts",
 		"db:sqlite:push": "drizzle-kit push --config=drizzle.config.sqlite.ts",
 		"db:sqlite:check": "drizzle-kit check --config=drizzle.config.sqlite.ts",
 		"db:sqlite:migrate": "drizzle-kit migrate --config=drizzle.config.sqlite.ts",
 		"db:sqlite:generate": "drizzle-kit generate --config=drizzle.config.sqlite.ts",
 		"db:sqlite:studio": "drizzle-kit studio --config=drizzle.config.sqlite.ts --host 127.0.0.1"
+	},
+	"lint-staged": {
+		"src/**/*.{js,ts,svelte}": "eslint",
+		"src/**/*.{js,ts,html,css,svelte}": "prettier --write"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^3.0.0",
@@ -34,6 +41,8 @@
 		"eslint-plugin-svelte": "^2.36.0",
 		"formsnap": "2.0.0-next.1",
 		"globals": "^15.0.0",
+		"husky": "^9.1.7",
+		"lint-staged": "^15.2.10",
 		"lucide-svelte": "^0.460.1",
 		"mode-watcher": "^0.4.1",
 		"prettier": "^3.3.2",
@@ -50,6 +59,7 @@
 		"typescript": "^5.0.0",
 		"typescript-eslint": "^8.0.0",
 		"vite": "^5.0.3",
+		"vitest": "^2.0.4",
 		"zod": "^3.23.8"
 	},
 	"dependencies": {
