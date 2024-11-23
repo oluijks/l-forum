@@ -1,5 +1,7 @@
 {
 	"name": "l-forum",
+	"description": "A forum like Simple Machines Forum made with SvelteKit",
+	"author": "Olaf Luijks <olafluijks@proton.me>",
 	"version": "0.1.0",
 	"type": "module",
 	"scripts": {
